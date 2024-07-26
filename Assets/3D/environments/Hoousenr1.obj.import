@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://xb3et6jsr83w"
+path="res://.godot/imported/Hoousenr1.obj-a98ea1532923f6b182d7bb5fd388a51d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hoousenr1.obj-a98ea1532923f6b182d7bb5fd388a51d.mesh"]
+
+source_file="res://Assets/3D/environments/Hoousenr1.obj"
+dest_files=["res://.godot/imported/Hoousenr1.obj-a98ea1532923f6b182d7bb5fd388a51d.mesh", "res://.godot/imported/Hoousenr1.obj-a98ea1532923f6b182d7bb5fd388a51d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

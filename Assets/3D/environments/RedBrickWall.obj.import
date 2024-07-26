@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://byfyql5n7shjn"
+path="res://.godot/imported/RedBrickWall.obj-73d5915edb42afa0c00d7392a4c1f0ff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/RedBrickWall.obj-73d5915edb42afa0c00d7392a4c1f0ff.mesh"]
+
+source_file="res://Assets/3D/environments/RedBrickWall.obj"
+dest_files=["res://.godot/imported/RedBrickWall.obj-73d5915edb42afa0c00d7392a4c1f0ff.mesh", "res://.godot/imported/RedBrickWall.obj-73d5915edb42afa0c00d7392a4c1f0ff.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
