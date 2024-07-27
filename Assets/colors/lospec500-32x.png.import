@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq2yfh4dpdiqe"
-path.s3tc="res://.godot/imported/lospec500-32x.png-9bce024e2e613544570bb1e92ab355d4.s3tc.ctex"
+path.s3tc="res://.godot/imported/lospec500-32x.png-4d1cd6d90372a7ca953db84e3746f713.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/3D/characters/lospec500-32x.png"
-dest_files=["res://.godot/imported/lospec500-32x.png-9bce024e2e613544570bb1e92ab355d4.s3tc.ctex"]
+source_file="res://Assets/colors/lospec500-32x.png"
+dest_files=["res://.godot/imported/lospec500-32x.png-4d1cd6d90372a7ca953db84e3746f713.s3tc.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b7o3bp1hbnf2c"
-path="res://.godot/imported/Walking.dae-d6685ba7df03691a9b0e0e304cf2ef3f.scn"
+path="res://.godot/imported/Walking.dae-b8084815d858761724d4f3c31e23bb9d.scn"
 
 [deps]
 
-source_file="res://scripts/Walking.dae"
-dest_files=["res://.godot/imported/Walking.dae-d6685ba7df03691a9b0e0e304cf2ef3f.scn"]
+source_file="res://Scripts/Walking.dae"
+dest_files=["res://.godot/imported/Walking.dae-b8084815d858761724d4f3c31e23bb9d.scn"]
 
 [params]
 

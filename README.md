@@ -25,21 +25,21 @@
 
 1. **Clone the repository:**
 
-    ```bash
-    git clone https://github.com/creamsicles-studio/Projekt-Wadowice.git
-    ```
+	```bash
+	git clone https://github.com/creamsicles-studio/Projekt-Wadowice.git
+	```
 
 2. **Navigate to the project directory:**
 
-    ```bash
-    cd wadowice
-    ```
+	```bash
+	cd wadowice
+	```
 
 3. **Open the project in Godot:**
 
-    - Open the Godot Engine.
-    - Click on the `Import` button and navigate to the project directory.
-    - Select the `project.godot` file and open the project.
+	- Open the Godot Engine.
+	- Click on the `Import` button and navigate to the project directory.
+	- Select the `project.godot` file and open the project.
 
 ## Usage
 
@@ -56,21 +56,21 @@ We welcome contributions! To get started, please fork the repository, create a n
 1. **Fork the repository**
 2. **Create a new branch:**
 
-    ```bash
-    git checkout -b feature/your-feature-name
-    ```
+	```bash
+	git checkout -b feature/your-feature-name
+	```
 
 3. **Commit your changes:**
 
-    ```bash
-    git commit -m 'Add some feature'
-    ```
+	```bash
+	git commit -m 'Add some feature'
+	```
 
 4. **Push to the branch:**
 
-    ```bash
-    git push origin feature/your-feature-name
-    ```
+	```bash
+	git push origin feature/your-feature-name
+	```
 
 5. **Open a pull request**
 
