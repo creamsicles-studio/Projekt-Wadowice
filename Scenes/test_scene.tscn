@@ -50,12 +50,6 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mvu7u")
 
-[node name="Player" parent="." instance=ExtResource("1_h2dnj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.571398, 0)
-disable_mode = 2
-slide_on_ceiling = false
-safe_margin = 1.0
-
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.681702, -0.367224, 0.843018)
 ignore_occlusion_culling = true
@@ -94,3 +88,6 @@ material = SubResource("StandardMaterial3D_u8kkx")
 transform = Transform3D(0.0051313, 0, 0.999987, 0, 1, 0, -0.999987, 0, 0.0051313, -10.5224, 0.663733, 0.697126)
 size = Vector3(12.6461, 2.0914, 1)
 material = SubResource("StandardMaterial3D_kru8s")
+
+[node name="Player" parent="." instance=ExtResource("1_h2dnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6379, -0.164038, -0.563095)

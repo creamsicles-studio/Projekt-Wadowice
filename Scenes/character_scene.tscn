@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgtr26tmnrl0s"]
+[gd_scene load_steps=12 format=3 uid="uid://bgtr26tmnrl0s"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="1_h25df"]
 [ext_resource type="Texture2D" uid="uid://cq2yfh4dpdiqe" path="res://Assets/colors/lospec500-32x.png" id="1_l67d6"]
@@ -6,6 +6,8 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shcph"]
 albedo_texture = ExtResource("1_l67d6")
+
+[sub_resource type="Skin" id="Skin_782ne"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0mph3"]
 points = PackedVector3Array(-0.0392005, 0.777671, 0.126611, -0.0975283, 0.768002, -0.0772671, -0.13937, 0.76642, -0.061419, -0.117863, 0.934811, -0.0698276, 0.628622, 0.856206, -0.0305271, 0.0393004, 0.934811, 0.0873107, 0.628622, 0.797313, 0.0283812, 0.137588, 0.758011, -0.0894778, -0.157113, 0.915151, 0.0676605, 0.117882, 0.915151, -0.0894778, 0.0393004, 0.758011, 0.126611, 0.628622, 0.856206, 0.0283812, 0.117882, 0.934811, -0.0698276, -0.162565, 0.765271, 0.0456116, 0.0393004, 0.915151, 0.106961, -0.137488, 0.895509, -0.0894778, 0.628622, 0.797313, -0.0305271, 0.196464, 0.758011, 0.0480314, 0.117882, 0.934811, 0.0676605, -0.162565, 0.765271, -0.0445317, -0.137488, 0.915151, 0.0873107, 0.0196752, 0.816973, 0.126611, -0.117863, 0.934811, 0.0676605, -0.158094, 0.890944, -0.0437866, -0.0392005, 0.915151, 0.106961, -0.0980761, 0.816973, 0.106961, 0.176838, 0.758011, -0.0698276, 0.137588, 0.895509, -0.0894778, 0.0787124, 0.895509, 0.106961, -0.117863, 0.915151, -0.0894778, -0.0784509, 0.895509, 0.106961, 0.137588, 0.758011, 0.0873107)
@@ -34,6 +36,7 @@ script = ExtResource("1_h25df")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 material_override = SubResource("StandardMaterial3D_shcph")
 mesh = ExtResource("2_q8xjy")
+skin = SubResource("Skin_782ne")
 
 [node name="@CollisionShape3D@55543" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("ConvexPolygonShape3D_0mph3")
