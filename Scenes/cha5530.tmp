@@ -21,6 +21,8 @@ height = 0.946056
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118446, 0)
 script = ExtResource("1_4f6wp")
+speed = null
+jump_velocity = null
 
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
 transform = Transform3D(1, -1.82076e-08, 1.91707e-09, 1.82076e-08, 0.978071, -0.20827, 1.91707e-09, 0.20827, 0.978071, 1.01501e-07, 0.72916, -0.0166717)
