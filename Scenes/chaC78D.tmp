@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bgtr26tmnrl0s"]
 
-[ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="1_h25df"]
 [ext_resource type="Texture2D" uid="uid://cq2yfh4dpdiqe" path="res://Assets/colors/lospec500-32x.png" id="1_l67d6"]
+[ext_resource type="Script" path="res://Scenes/CharacterBody3D.gd" id="1_qr0gv"]
 [ext_resource type="ArrayMesh" uid="uid://bqgpsbeon5yey" path="res://Assets/3D/characters/character.obj" id="2_q8xjy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shcph"]
@@ -29,7 +29,7 @@ points = PackedVector3Array(0.157156, 0.758011, 0.0872992, 0.117867, 0.188378, -
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118446, 0)
-script = ExtResource("1_h25df")
+script = ExtResource("1_qr0gv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 material_override = SubResource("StandardMaterial3D_shcph")
