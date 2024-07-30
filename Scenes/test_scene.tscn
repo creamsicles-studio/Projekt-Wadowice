@@ -90,4 +90,4 @@ size = Vector3(12.6461, 2.0914, 1)
 material = SubResource("StandardMaterial3D_kru8s")
 
 [node name="Player" parent="." instance=ExtResource("1_h2dnj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6379, -0.164038, -0.563095)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.638, 0, -0.483101)
