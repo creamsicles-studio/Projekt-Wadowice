@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://da71d5w4cchfe"]
+[gd_scene load_steps=14 format=3 uid="uid://da71d5w4cchfe"]
 
 [ext_resource type="PackedScene" uid="uid://bgtr26tmnrl0s" path="res://Scenes/character_scene.tscn" id="1_h2dnj"]
 [ext_resource type="Script" path="res://Scenes/FPS.gd" id="2_a3upa"]
+[ext_resource type="Script" path="res://addons/proto_shape/proto_ramp/proto_ramp.gd" id="3_a6mbs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vpr8k"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -106,3 +107,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "100%"
 script = ExtResource("2_a3upa")
+
+[node name="ProtoRamp" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.149346, 0)
+use_collision = true
+script = ExtResource("3_a6mbs")
+type = 1
+width = 1.0
+height = 1.0
+depth = 1.951
+anchor = 0
+anchor_fixed = true
+material = null
+calculation = 0
+steps = 8
+fill = true
