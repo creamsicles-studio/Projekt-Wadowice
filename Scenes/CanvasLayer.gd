@@ -1,21 +1,21 @@
 extends CanvasLayer
 
-# Maksymalny czas sprintu
+# Maximum sprint duration
 @export var max_sprint_duration: float = 7.0
 
-# Odniesienie do wskaźnika sprintu
+# Reference to the sprint bar
 @onready var sprint_bar: ProgressBar = $Control/SprintBar
 
-# Referencja do postaci
+# Reference to the player character
 var player: Node = null
 
 func _ready() -> void:
-	# Znalezienie referencji do postaci
+	# Find the player character node
 	player = get_parent().get_node("CharacterBody3D")
 	if not player:
-		print("Nie znaleziono węzła CharacterBody3D")
+		print("CharacterBody3D node not found")
 		return
-	# Inicjalizacja wskaźnika sprintu
+	# Initialize the sprint bar
 	sprint_bar.max_value = max_sprint_duration
 	sprint_bar.value = max_sprint_duration
 
@@ -23,15 +23,19 @@ func _process(delta: float) -> void:
 	if not player:
 		return
 
-	# Aktualizacja wskaźnika sprintu
+	# Get player state
 	var is_sprinting = player.is_sprinting
 	var sprint_timer = player.sprint_timer
 	var sprint_cooldown_timer = player.sprint_cooldown_timer
 	var can_sprint = player.can_sprint
 
+	# Update the sprint bar
 	if is_sprinting:
+		# Decrease the sprint bar value while sprinting
 		sprint_bar.value = max_sprint_duration - sprint_timer
 	elif not can_sprint:
-		sprint_bar.value = max_sprint_duration - sprint_cooldown_timer
+		# Increase the sprint bar value during cooldown
+		sprint_bar.value = (sprint_cooldown_timer / player.sprint_cooldown_duration) * max_sprint_duration
 	else:
+		# Reset the sprint bar to full value when sprint is fully recharged
 		sprint_bar.value = max_sprint_duration
