@@ -63,6 +63,7 @@ func handle_sprinting(delta: float) -> void:
 				sprint_timer = 0.0
 		else:
 			is_sprinting = false
+			
 
 # Handle character movement based on input and sprinting state
 func handle_movement(_delta: float) -> void:
