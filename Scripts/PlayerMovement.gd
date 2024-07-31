@@ -80,6 +80,6 @@ func handle_movement(_delta: float) -> void:
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
 	else:
-		# Decelerate when no input is given
+		# Decelerte when no input is given
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)

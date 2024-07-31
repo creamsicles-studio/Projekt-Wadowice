@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgtr26tmnrl0s"]
+[gd_scene load_steps=10 format=3 uid="uid://bgtr26tmnrl0s"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_4f6wp"]
 [ext_resource type="Texture2D" uid="uid://cq2yfh4dpdiqe" path="res://Assets/colors/lospec500-32x.png" id="1_l67d6"]
 [ext_resource type="Script" path="res://Scripts/CameraScript.gd" id="2_jfar8"]
 [ext_resource type="ArrayMesh" uid="uid://bqgpsbeon5yey" path="res://Assets/3D/characters/character.obj" id="2_q8xjy"]
+[ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="5_4ibtn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shcph"]
 albedo_texture = ExtResource("1_l67d6")
@@ -44,3 +45,20 @@ shape = SubResource("SphereShape3D_rgmct")
 [node name="BodyCollider" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.459417, 0)
 shape = SubResource("CapsuleShape3D_osncl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("5_4ibtn")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SprintBar" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 573.0
+offset_right = 256.0
+offset_bottom = 649.0
+theme_override_font_sizes/font_size = 50
