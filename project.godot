@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 window/vsync/vsync_mode=0
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/proto_shape/plugin.cfg")
+
 [input]
 
 up={
