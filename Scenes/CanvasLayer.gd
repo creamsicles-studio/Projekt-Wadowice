@@ -19,7 +19,7 @@ func _ready() -> void:
 	sprint_bar.max_value = max_sprint_duration
 	sprint_bar.value = max_sprint_duration
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not player:
 		return
 
