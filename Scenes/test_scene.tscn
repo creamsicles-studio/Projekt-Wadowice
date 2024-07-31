@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://da71d5w4cchfe"]
+[gd_scene load_steps=17 format=3 uid="uid://da71d5w4cchfe"]
 
+[ext_resource type="Script" path="res://Scenes/path.gd" id="1_63kky"]
 [ext_resource type="PackedScene" uid="uid://bgtr26tmnrl0s" path="res://Scenes/character_scene.tscn" id="1_h2dnj"]
 [ext_resource type="Script" path="res://Scripts/FPS.gd" id="2_a3upa"]
 [ext_resource type="Script" path="res://addons/proto_shape/proto_ramp/proto_ramp.gd" id="3_a6mbs"]
+[ext_resource type="PackedScene" uid="uid://sqjwsro3ful6" path="res://Scenes/remy enemy.tscn" id="4_o18s4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vpr8k"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -38,7 +40,15 @@ albedo_color = Color(0.454902, 0.0901961, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bu2g1"]
 albedo_color = Color(0.257763, 0.253979, 0.11384, 1)
 
+[sub_resource type="Curve3D" id="Curve3D_sodgf"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3.33372, 1.64038, -1.89384, 0, 0, 0, 0, 0, 0, 32.0736, 1.63916, 45.9723, -4.08289, 0.0901082, -8.2277, 4.08289, -0.0901082, 8.2277, 44.1045, 1.63916, 121.585, 0, 0, 0, 0, 0, 0, 29.0697, 1.63672, 143.24, 7.97178, 0.529018, 13.3209, -7.97178, -0.529018, -13.3209, -20.3916, 1.63916, 150.552, 7.07641, -0.564389, 12.5317, -7.07641, 0.564389, -12.5317, -41.908, 1.6416, 111.714, 2.82179, 0.171211, 8.22507, -2.82179, -0.171211, -8.22507, -50.2853, 1.63916, 36.2483, 0, 0, 0, 0, 0, 0, -29.9795, 1.6416, -0.866371, 0, 0, 0, 0, 0, 0, -5.82477, 1.64038, -1.24745, 0, 0, 0, 0, 0, 0, -3.33372, 1.64038, -1.89384),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, -1.68229, 0, 0, 0)
+}
+point_count = 10
+
 [node name="Test Scene" type="Node3D"]
+script = ExtResource("1_63kky")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mvu7u")
@@ -48,7 +58,7 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.681702, -0.367224, 0.843018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.681702, -0.39133, 0.843018)
 ignore_occlusion_culling = true
 use_collision = true
 size = Vector3(20.868, 0.406372, 11.686)
@@ -131,3 +141,13 @@ offset_bottom = 155.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "5555"
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(0.0177566, 0, 0.0984109, 0, 0.1, 0, -0.0984109, 0, 0.0177566, -7.52352, -0.164038, -1.04492)
+curve = SubResource("Curve3D_sodgf")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.824259, 0, -0.56621, 0, 0.999999, 0, 0.566209, 0, -0.824259, -3.33372, 1.64038, -1.89384)
+
+[node name="AuxScene" parent="Path3D/PathFollow3D" instance=ExtResource("4_o18s4")]
+transform = Transform3D(-0.824262, 0, 0.566212, 0, 1, 0, -0.566211, 0, -0.824262, 1.79279, -1.64038, -4.39753)
