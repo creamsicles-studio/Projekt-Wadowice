@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://da71d5w4cchfe"]
 
 [ext_resource type="PackedScene" uid="uid://bgtr26tmnrl0s" path="res://Scenes/character_scene.tscn" id="1_h2dnj"]
-[ext_resource type="Script" path="res://Scenes/FPS.gd" id="2_a3upa"]
+[ext_resource type="Script" path="res://Scripts/FPS.gd" id="2_a3upa"]
 [ext_resource type="Script" path="res://addons/proto_shape/proto_ramp/proto_ramp.gd" id="3_a6mbs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vpr8k"]
@@ -101,11 +101,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.638, 0, -0.483101)
 show_behind_parent = true
 offset_left = 10.0
 offset_top = 6.0
-offset_right = 267.0
-offset_bottom = 143.0
+offset_right = 126.0
+offset_bottom = 75.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 100
-text = "100%"
+theme_override_font_sizes/font_size = 50
+text = "5555"
 script = ExtResource("2_a3upa")
 
 [node name="ProtoRamp" type="CSGCombiner3D" parent="."]
@@ -122,3 +122,12 @@ material = null
 calculation = 0
 steps = 8
 fill = true
+
+[node name="velocity" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 73.0
+offset_right = 153.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "5555"

@@ -4,7 +4,9 @@ extends Node3D
 @export var max_head_angle: float = 70.0  # Maximum pitch angle for the head
 @export var min_head_angle: float = -10.0  # Minimum pitch angle for the head
 
-@onready var camera: Camera3D = $Camera  # Reference to the Camera3D node
+#@onready var camera: Camera3D = $Camera  # Reference to the Camera3D node
+@onready var camera_3d = $Camera3D
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED  # Capture the mouse for camera control
