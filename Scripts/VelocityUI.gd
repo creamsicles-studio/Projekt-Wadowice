@@ -1,19 +1,19 @@
 extends CanvasLayer
 
 # Reference to the Label node within the CanvasLayer
-@onready var velocity_label: Label = $Label
+@onready var velocity_ui: Label = $VelocityUI
 
-# Variable to hold the velocity data
+# Variable to store the current velocity
 var velocity: float = 0.0
 
 func _ready() -> void:
-	# Initialization if needed
+	# Initialization code can be added here if needed
 	pass
 
-func _process(_delta: float) -> void:
-	# Update the label text with the current velocity
-	velocity_label.text = "Velocity: %.2f" % velocity
+func _process(delta: float) -> void:
+	# Update the label's text to display the current velocity
+	velocity_ui.text = "Velocity: %.2f" % velocity
 
-# Function to update the velocity
+# Method to set a new velocity value
 func set_velocity(new_velocity: float) -> void:
 	velocity = new_velocity

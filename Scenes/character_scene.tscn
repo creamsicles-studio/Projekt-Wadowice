@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cq2yfh4dpdiqe" path="res://Assets/colors/lospec500-32x.png" id="1_l67d6"]
 [ext_resource type="Script" path="res://Scripts/CameraScript.gd" id="2_jfar8"]
 [ext_resource type="ArrayMesh" uid="uid://bqgpsbeon5yey" path="res://Assets/3D/characters/character.obj" id="2_q8xjy"]
-[ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="5_4ibtn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shcph"]
 albedo_texture = ExtResource("1_l67d6")
@@ -16,6 +15,50 @@ albedo_texture = ExtResource("1_l67d6")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_osncl"]
 radius = 0.221976
 height = 0.946056
+
+[sub_resource type="GDScript" id="GDScript_ajx5o"]
+script/source = "extends CanvasLayer
+
+# Maximum sprint duration
+@export var max_sprint_duration: float = 7.0
+
+# Reference to the sprint bar
+@onready var sprint_bar: ProgressBar = $Control/SprintBar
+
+# Reference to the player character
+var player: Node = null
+
+func _ready() -> void:
+	# Find the player character node
+	player = get_parent().get_node(\"CharacterBody3D\")
+	if not player:
+		print(\"CharacterBody3D node not found\")
+		return
+	# Initialize the sprint bar
+	sprint_bar.max_value = max_sprint_duration
+	sprint_bar.value = max_sprint_duration
+
+func _process(_delta: float) -> void:
+	if not player:
+		return
+
+	# Get player state
+	var is_sprinting = player.is_sprinting
+	var sprint_timer = player.sprint_timer
+	var sprint_cooldown_timer = player.sprint_cooldown_timer
+	var can_sprint = player.can_sprint
+
+	# Update the sprint bar
+	if is_sprinting:
+		# Decrease the sprint bar value while sprinting
+		sprint_bar.value = max_sprint_duration - sprint_timer
+	elif not can_sprint:
+		# Increase the sprint bar value during cooldown
+		sprint_bar.value = (sprint_cooldown_timer / player.sprint_cooldown_duration) * max_sprint_duration
+	else:
+		# Reset the sprint bar to full value when sprint is fully recharged
+		sprint_bar.value = max_sprint_duration
+"
 
 [node name="Player" type="CharacterBody3D"]
 
@@ -47,7 +90,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.459417, 0)
 shape = SubResource("CapsuleShape3D_osncl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("5_4ibtn")
+script = SubResource("GDScript_ajx5o")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
