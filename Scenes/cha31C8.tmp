@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgtr26tmnrl0s"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_4f6wp"]
+[ext_resource type="Texture2D" uid="uid://cq2yfh4dpdiqe" path="res://Assets/colors/lospec500-32x.png" id="1_l67d6"]
+[ext_resource type="Script" path="res://Scripts/CameraScript.gd" id="2_jfar8"]
+[ext_resource type="ArrayMesh" uid="uid://bqgpsbeon5yey" path="res://Assets/3D/characters/character.obj" id="2_q8xjy"]
+[ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="5_4ibtn"]
+[ext_resource type="Script" path="res://Scripts/VelocityUI.gd" id="6_2o4xu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shcph"]
+albedo_texture = ExtResource("1_l67d6")
+
+[sub_resource type="Skin" id="Skin_782ne"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rgmct"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_osncl"]
+radius = 0.221976
+height = 0.946056
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118446, 0)
+script = ExtResource("1_4f6wp")
+
+[node name="Head" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, -1.82076e-08, 1.91707e-09, 1.82076e-08, 0.978071, -0.20827, 1.91707e-09, 0.20827, 0.978071, 1.01501e-07, 0.72916, -0.0166717)
+script = ExtResource("2_jfar8")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
+transform = Transform3D(-1, -1.51808e-08, -8.60947e-08, 1.06581e-14, 0.984808, -0.173648, 8.74228e-08, -0.173648, -0.984808, -0.379526, 0.00826716, -1.7341)
+h_offset = 0.5
+fov = 85.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000226498, 0, 0.00241828)
+material_override = SubResource("StandardMaterial3D_shcph")
+mesh = ExtResource("2_q8xjy")
+skin = SubResource("Skin_782ne")
+
+[node name="HeadCollider" type="CollisionShape3D" parent="CharacterBody3D/MeshInstance3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.000226498, 1.09434, -0.00241828)
+shape = SubResource("SphereShape3D_rgmct")
+
+[node name="BodyCollider" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.459417, 0)
+shape = SubResource("CapsuleShape3D_osncl")
+
+[node name="SprintDurationUI" type="CanvasLayer" parent="."]
+script = ExtResource("5_4ibtn")
+
+[node name="Control" type="Control" parent="SprintDurationUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SprintBar" type="ProgressBar" parent="SprintDurationUI/Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 573.0
+offset_right = 256.0
+offset_bottom = 649.0
+theme_override_font_sizes/font_size = 50
+value = 10.0
+
+[node name="VelocityUI" type="CanvasLayer" parent="."]
+script = ExtResource("6_2o4xu")
+
+[node name="Label" type="Label" parent="VelocityUI"]
+offset_top = 123.0
+offset_right = 243.0
+offset_bottom = 235.0
+text = "100%"
